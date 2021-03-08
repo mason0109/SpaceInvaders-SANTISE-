@@ -119,6 +119,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runSpeed: 1
+  player: {fileID: 6003642234227197179}
+  sanitiserAmmo: {fileID: 1747648634809843172, guid: a99956e9d4587b14fb6a0ceb00517909, type: 3}
+  sanitiserAmmoCopy: {fileID: 0}
   maxBound: 0
   minBound: 0
 --- !u!114 &-2529151002066892797

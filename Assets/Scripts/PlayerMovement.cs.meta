@@ -3,7 +3,9 @@ guid: cff23610251b0bc46a490cbfd118d220
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - sanitiserAmmo: {fileID: 1747648634809843172, guid: a99956e9d4587b14fb6a0ceb00517909, type: 3}
+  - sanitiserAmmoCopy: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

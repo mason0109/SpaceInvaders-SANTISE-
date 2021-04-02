@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -2529151002066892797}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -119,7 +119,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runSpeed: 1
-  player: {fileID: 6003642234227197179}
   sanitiserAmmo: {fileID: 1747648634809843172, guid: a99956e9d4587b14fb6a0ceb00517909, type: 3}
   sanitiserAmmoCopy: {fileID: 0}
   maxBound: 0

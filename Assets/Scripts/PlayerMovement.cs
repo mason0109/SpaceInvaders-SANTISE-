@@ -36,10 +36,12 @@ public class PlayerMovement : MonoBehaviour
     
     public void Fire(float shoot)
     {
-        Vector3 v = rigidbody.transform.position + new Vector3(0, 0.8f, 0);
-        Instantiate(sanitiserAmmo, v, Quaternion.identity);
-        //GameObject sanitiserAmmoCopy = Instantiate(sanitiserAmmo, new Vector3(rigidbody.transform.position.y, rigidbody.transform.position.y + 0.8f, 0), 
-            //rigidbody.transform.rotation); 
+        if (sanitiserAmmoCopy == null)
+        {
+            Vector3 v = rigidbody.transform.position + new Vector3(0, 0.8f, 0);
+            sanitiserAmmoCopy = Instantiate(sanitiserAmmo, v, Quaternion.identity);
+        }
+
     }
 
     public void onFire(InputAction.CallbackContext input)

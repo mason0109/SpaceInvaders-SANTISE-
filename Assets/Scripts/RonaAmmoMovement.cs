@@ -26,9 +26,11 @@ public class RonaAmmoMovement : MonoBehaviour
         if (collision.gameObject.tag == "Boundary")
         {
             Destroy(gameObject);
+            EventSystem.current.defenceHitDamage();
         }
         if (collision.gameObject.tag == "Defence"){
             Destroy(gameObject);
         }
+    
     }
 }

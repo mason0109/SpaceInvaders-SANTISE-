@@ -6,7 +6,7 @@ public class RonaMovement : MonoBehaviour
 {
     float timer = 0;
     float timerMax = 0.5f;
-    float speed = 0.001f;
+    float speed = 0.005f;
 
     int ronaAmmoCount = 0;
 
@@ -29,8 +29,10 @@ public class RonaMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        fireRonaAmmo();
-        move();
+        
+            fireRonaAmmo();
+            move();
+        
     }
 
     public void move()
@@ -40,16 +42,20 @@ public class RonaMovement : MonoBehaviour
 
     public void onTurnRight() 
     {
-        float temp = System.Math.Abs(speed);
-        transform.Translate(new Vector3(0, -0.5f, 0));
-        speed = temp;
+        
+            float temp = System.Math.Abs(speed);
+            transform.Translate(new Vector3(0, -0.5f, 0));
+            speed = temp;
+        
     }
 
     public void onTurnLeft()
     {
-        float temp = System.Math.Abs(speed);
-        transform.Translate(new Vector3(0, -0.5f, 0));
-        speed = -temp;
+        
+            float temp = System.Math.Abs(speed);
+            transform.Translate(new Vector3(0, -0.5f, 0));
+            speed = -temp;
+        
     }
 
     private void fireRonaAmmo()
@@ -65,5 +71,11 @@ public class RonaMovement : MonoBehaviour
                 ronaAmmoCount = 0;
             }
         }
+    }
+
+    void onDestroy()
+    {
+       EventSystem.current.onLeftBoundaryTurn -= onTurnRight; 
+       EventSystem.current.onRightBoundaryTurn -= onTurnLeft;
     }
 }

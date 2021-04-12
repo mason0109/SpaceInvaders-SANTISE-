@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4332740529151899346}
   - component: {fileID: 3389098992173723377}
   - component: {fileID: -705559048538532742}
+  - component: {fileID: -7540530647247878178}
   m_Layer: 0
   m_Name: Defence
   m_TagString: Defence
@@ -131,3 +132,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 9.620012, y: 2.6466892}
   m_EdgeRadius: 0
+--- !u!114 &-7540530647247878178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5582129658035841136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b66570ce522d148bdfc9b119feddb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  noDamage: {fileID: 21300000, guid: 5aa8390ebd1f01046a1ae5e4dd8f1755, type: 3}
+  slightDamage: {fileID: 21300000, guid: 551cfb1d431089f4aae151070f3c3379, type: 3}
+  decentDamage: {fileID: 21300000, guid: f58409a7f4264cf4c82b94dc3cc2aecd, type: 3}

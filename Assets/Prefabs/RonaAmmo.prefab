@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -4152051934734381037}
   - component: {fileID: 3879298767894130183}
   - component: {fileID: 8608817991726410985}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RonaAmmo
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -33,4 +33,14 @@ public class EventSystem : MonoBehaviour
             onRightBoundaryTurn();
         }
     }
+
+    public event Action onDefenceHitDamage;
+
+    public void defenceHitDamage()
+    {
+        if (onDefenceHitDamage != null)
+        {
+            onDefenceHitDamage();
+        }
+    }
 } 

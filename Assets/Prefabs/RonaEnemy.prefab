@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -3850832398925214071}
   - component: {fileID: -4770400183807138558}
   - component: {fileID: 8340331395468114258}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RonaEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}

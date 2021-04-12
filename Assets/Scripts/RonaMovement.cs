@@ -6,8 +6,8 @@ public class RonaMovement : MonoBehaviour
 {
     float timer = 0;
     float timerMax = 0.5f;
-    float speed = 0.01f;
-    bool boundaryReached = false;
+    float speed = 0.001f;
+
     int ronaAmmoCount = 0;
 
     public GameObject RonaAmmo;
@@ -20,39 +20,36 @@ public class RonaMovement : MonoBehaviour
         rigidbody = gameObject.GetComponent<Rigidbody2D>();
     }
 
-    // Start is called before the first frame update
     void Start()
     {
-        
+        EventSystem.current.onLeftBoundaryTurn += onTurnRight;
+        EventSystem.current.onRightBoundaryTurn += onTurnLeft;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (boundaryReached == false)
-        {
-            timer += Time.deltaTime;
-            if (timer < timerMax)
-            {
-                transform.Translate(new Vector3(speed, 0, 0));
-                timer = 0;
-            }
-        }
-        if (boundaryReached == true)
-        {
-            boundaryReached = false;
-            transform.Translate(new Vector3(0, -1, 0));
-            speed = -speed;
-        }
         fireRonaAmmo();
+        move();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void move()
     {
-        if (collision.gameObject.tag == "RBoundary" || collision.gameObject.tag == "LBoundary")
-        {
-            boundaryReached = true;
-        }
+        transform.Translate(new Vector3(speed, 0, 0));
+    }
+
+    public void onTurnRight() 
+    {
+        float temp = System.Math.Abs(speed);
+        transform.Translate(new Vector3(0, -0.5f, 0));
+        speed = temp;
+    }
+
+    public void onTurnLeft()
+    {
+        float temp = System.Math.Abs(speed);
+        transform.Translate(new Vector3(0, -0.5f, 0));
+        speed = -temp;
     }
 
     private void fireRonaAmmo()

@@ -34,13 +34,13 @@ public class EventSystem : MonoBehaviour
         }
     }
 
-    public event Action onDefenceHitDamage;
+    public event Action onPlayerHitTakeALife;
 
-    public void defenceHitDamage()
+    public void playerHitTakeALife()
     {
-        if (onDefenceHitDamage != null)
+        if (onPlayerHitTakeALife != null)
         {
-            onDefenceHitDamage();
+            playerHitTakeALife();
         }
     }
 } 

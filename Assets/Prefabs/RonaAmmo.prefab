@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8608817991726410985}
   m_Layer: 3
   m_Name: RonaAmmo
-  m_TagString: Untagged
+  m_TagString: RonaAmmo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

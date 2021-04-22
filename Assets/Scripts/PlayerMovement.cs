@@ -13,13 +13,17 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rigidbody;
     private Vector2 myVelocity;
 
-    //to keep the player in bounds?
-    public float maxBound, minBound;
+    public int playerLives = 3;
 
     private void Awake()
     {
         rigidbody = gameObject.GetComponent<Rigidbody2D>();
     } 
+
+    void Start()
+    {
+        EventSystem.current.onPlayerHitTakeALife += takeDamange;
+    }
 
     public void Move(Vector2 direction)
     {
@@ -47,5 +51,18 @@ public class PlayerMovement : MonoBehaviour
     public void onFire(InputAction.CallbackContext input)
     {
         Fire(input.ReadValue<float>());
+    }
+
+    public void takeDamange()
+    {
+        if (playerLives == 1) 
+        {
+            playerLives--;
+            Destroy(gameObject);
+        }
+        if (playerLives > 1) 
+        {
+            playerLives--;
+        }
     }
 }

@@ -29,10 +29,10 @@ public class RonaMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (gameObject != null){
             fireRonaAmmo();
             move();
-        
+        }   
     }
 
     public void move()
@@ -73,7 +73,7 @@ public class RonaMovement : MonoBehaviour
         }
     }
 
-    void onDestroy()
+    void OnDestroy()
     {
        EventSystem.current.onLeftBoundaryTurn -= onTurnRight; 
        EventSystem.current.onRightBoundaryTurn -= onTurnLeft;

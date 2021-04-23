@@ -40,7 +40,17 @@ public class EventSystem : MonoBehaviour
     {
         if (onPlayerHitTakeALife != null)
         {
-            playerHitTakeALife();
+            onPlayerHitTakeALife();
+        }
+    }
+
+    public event Action onFinalHitPlayerDies;
+
+    public void finalHitPlayerDies()
+    {
+        if (onFinalHitPlayerDies != null)
+        {
+            onFinalHitPlayerDies();    
         }
     }
 } 

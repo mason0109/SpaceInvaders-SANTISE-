@@ -60,7 +60,7 @@ public class RonaMovement : MonoBehaviour
 
     private void fireRonaAmmo()
     {
-        if (Random.Range(0f, 1500f) < 1)
+        if (Random.Range(0f, 2000f) < 1)
         {
             if (ronaAmmoCount < 3)
             {

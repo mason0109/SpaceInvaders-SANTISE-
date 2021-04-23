@@ -17,12 +17,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
+        //playerLives = 3;
         rigidbody = gameObject.GetComponent<Rigidbody2D>();
     } 
 
     void Start()
     {
-        EventSystem.current.onPlayerHitTakeALife += takeDamange;
+        EventSystem.current.onPlayerHitTakeALife += takeDamage;
     }
 
     public void Move(Vector2 direction)
@@ -53,16 +54,21 @@ public class PlayerMovement : MonoBehaviour
         Fire(input.ReadValue<float>());
     }
 
-    public void takeDamange()
+    public void takeDamage()
     {
         if (playerLives == 1) 
         {
             playerLives--;
-            Destroy(gameObject);
         }
         if (playerLives > 1) 
         {
             playerLives--;
+            //SEE IS UI CONTROLLER DOES THIS
         }
+    }
+
+    void OnDestroy()
+    {
+        EventSystem.current.onPlayerHitTakeALife -= takeDamage;
     }
 }

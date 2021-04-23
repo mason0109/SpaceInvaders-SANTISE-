@@ -20,7 +20,7 @@ public class RonaAmmoMovement : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Destroy(collision.gameObject);
+            EventSystem.current.playerHitTakeALife();
             Destroy(gameObject);
         }
         if (collision.gameObject.tag == "Boundary")

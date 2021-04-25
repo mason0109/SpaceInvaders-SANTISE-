@@ -63,4 +63,14 @@ public class EventSystem : MonoBehaviour
             onEnemyKilledIncreaseScore();
         }
     }
+
+    public event Action onGameOver;
+
+    public void gameOver()
+    {
+        if (onGameOver != null)
+        {
+            onGameOver();
+        }
+    }
 } 

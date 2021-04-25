@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
@@ -19,6 +20,11 @@ public class UIController : MonoBehaviour
 
     private bool playerDead = false;
 
+    private int score = 0;
+
+    [SerializeField]
+    private Text scoreDisplay;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +32,7 @@ public class UIController : MonoBehaviour
         lives2.transform.position = new Vector3(-6.44f, 6.41f, 0f);
         lives3.transform.position = new Vector3(-5.15f, 6.41f, 0f);
         EventSystem.current.onFinalHitPlayerDies += playerDies;
+        EventSystem.current.onEnemyKilledIncreaseScore += increaseScore;
     }
 
     // Update is called once per frame
@@ -63,5 +70,11 @@ public class UIController : MonoBehaviour
                 EventSystem.current.finalHitPlayerDies();
                 break;
         }
+    }
+
+    void increaseScore()
+    {
+        score = score + 50;
+        scoreDisplay.text = "Score:  " + score;
     }
 }

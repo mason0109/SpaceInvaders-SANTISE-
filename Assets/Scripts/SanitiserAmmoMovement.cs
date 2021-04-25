@@ -24,6 +24,7 @@ public class SanitiserAmmoMovement : MonoBehaviour
         {
             Destroy(collision.gameObject);
             Destroy(gameObject);
+            EventSystem.current.enemyKilledIncreaseScore();
         }
         if (collision.gameObject.tag == "Boundary")
         {

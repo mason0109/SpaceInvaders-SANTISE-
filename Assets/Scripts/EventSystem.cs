@@ -53,4 +53,14 @@ public class EventSystem : MonoBehaviour
             onFinalHitPlayerDies();    
         }
     }
+
+    public event Action onEnemyKilledIncreaseScore;
+
+    public void enemyKilledIncreaseScore()
+    {
+        if (onEnemyKilledIncreaseScore != null)
+        {
+            onEnemyKilledIncreaseScore();
+        }
+    }
 } 

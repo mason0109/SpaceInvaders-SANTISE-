@@ -33,6 +33,7 @@ public class UIController : MonoBehaviour
         lives3.transform.position = new Vector3(-5.15f, 6.41f, 0f);
         EventSystem.current.onFinalHitPlayerDies += playerDies;
         EventSystem.current.onEnemyKilledIncreaseScore += increaseScore;
+        EventSystem.current.onGameOver += GameOver;
     }
 
     // Update is called once per frame
@@ -48,6 +49,7 @@ public class UIController : MonoBehaviour
     void playerDies()
     {
         playerDead = true;
+        GameOver();
     }
 
     void checkPlayerHealth()
@@ -76,5 +78,10 @@ public class UIController : MonoBehaviour
     {
         score = score + 50;
         scoreDisplay.text = "Score:  " + score;
+    }
+
+    void GameOver()
+    {
+        //
     }
 }

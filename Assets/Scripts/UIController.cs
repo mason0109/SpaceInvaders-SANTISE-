@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,9 +19,12 @@ public class UIController : MonoBehaviour
     [SerializeField]
     private GameObject player;
 
+    [SerializeField]
+    public GameOverScript gameOverScript;
+
     private bool playerDead = false;
 
-    private int score = 0;
+    public int score = 0;
 
     [SerializeField]
     private Text scoreDisplay;
@@ -69,7 +73,7 @@ public class UIController : MonoBehaviour
                 lives1.transform.position = new Vector3(-7.73f, 6.41f, -50f);
                 lives2.transform.position = new Vector3(-6.44f, 6.41f, -50f);
                 lives3.transform.position = new Vector3(-5.15f, 6.41f, -50f);
-                EventSystem.current.finalHitPlayerDies();
+                GameOver();
                 break;
         }
     }
@@ -82,6 +86,7 @@ public class UIController : MonoBehaviour
 
     void GameOver()
     {
-        //
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        gameOverScript.StartUp(score);
     }
 }

@@ -11,5 +11,9 @@ public class SpaceInvadedBehaviour : MonoBehaviour
             EventSystem.current.gameOver();
             Debug.Log("Game Over!");
         }
+        if (collision.gameObject.tag == "RonaAmmo")
+        {
+            Destroy(collision.gameObject);
+        }
     }
 }

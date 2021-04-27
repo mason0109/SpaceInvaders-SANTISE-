@@ -739,6 +739,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpaceInvadedBoundary
       objectReference: {fileID: 0}
+    - target: {fileID: 3511187825239835618, guid: 0047a217a90afa748ac38486f847ef00, type: 3}
+      propertyPath: m_TagString
+      value: EnemyBoundary
+      objectReference: {fileID: 0}
     - target: {fileID: 3511187825239835619, guid: 0047a217a90afa748ac38486f847ef00, type: 3}
       propertyPath: m_Color.a
       value: 0
@@ -761,7 +765,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3511187825239835644, guid: 0047a217a90afa748ac38486f847ef00, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.7564
+      value: -5.61
       objectReference: {fileID: 0}
     - target: {fileID: 3511187825239835644, guid: 0047a217a90afa748ac38486f847ef00, type: 3}
       propertyPath: m_LocalPosition.z
@@ -920,6 +924,8 @@ MonoBehaviour:
   lives2: {fileID: 13591447}
   lives3: {fileID: 63638234}
   player: {fileID: 6003642234305244014}
+  gameOverScript: {fileID: 0}
+  score: 0
   scoreDisplay: {fileID: 36593194}
 --- !u!4 &331528482
 Transform:

@@ -12,6 +12,7 @@ TagManager:
   - Defence
   - RonaAmmo
   - Health
+  - EnemyBoundary
   layers:
   - Default
   - TransparentFX

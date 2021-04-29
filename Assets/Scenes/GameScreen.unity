@@ -689,7 +689,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64e86e6a53d51a148ab135aff3453aa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointsDisplay: {fileID: 36593194}
 --- !u!114 &189795958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -925,7 +924,7 @@ MonoBehaviour:
   lives3: {fileID: 63638234}
   player: {fileID: 6003642234305244014}
   gameOverScript: {fileID: 0}
-  score: 0
+  playerStats: {fileID: 11400000, guid: ee0a83f2eaa88b84fb68678e87dcce6e, type: 2}
   scoreDisplay: {fileID: 36593194}
 --- !u!4 &331528482
 Transform:

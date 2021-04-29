@@ -19,12 +19,9 @@ public class UIController : MonoBehaviour
     [SerializeField]
     private GameObject player;
 
-    [SerializeField]
-    public GameOverScript gameOverScript;
-
     private bool playerDead = false;
 
-    public int score = 0;
+    public PlayerStats playerStats;
 
     [SerializeField]
     private Text scoreDisplay;
@@ -80,13 +77,12 @@ public class UIController : MonoBehaviour
 
     void increaseScore()
     {
-        score = score + 50;
-        scoreDisplay.text = "Score:  " + score;
+        playerStats.Score = playerStats.Score + 50;
+        scoreDisplay.text = "Score:  " + playerStats.Score;
     }
 
     void GameOver()
     {
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        gameOverScript.StartUp(score);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

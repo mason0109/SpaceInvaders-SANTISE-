@@ -479,15 +479,15 @@ RectTransform:
   m_GameObject: {fileID: 401849612}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.125, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1048327123}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 87}
-  m_SizeDelta: {x: 360.3693, y: 66.0215}
+  m_AnchoredPosition: {x: 0, y: 83}
+  m_SizeDelta: {x: 528.7219, y: 66.0215}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &401849614
 MonoBehaviour:
@@ -708,9 +708,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 926990607}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e86e6a53d51a148ab135aff3453aa4, type: 3}
+  m_Script: {fileID: 11500000, guid: 5acace9135b37d34eb1bf0157775f613, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreDisplay: {fileID: 401849614}
+  playerStats: {fileID: 11400000, guid: ee0a83f2eaa88b84fb68678e87dcce6e, type: 2}
 --- !u!1 &1048327122
 GameObject:
   m_ObjectHideFlags: 0
@@ -802,6 +804,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreDisplay: {fileID: 401849614}
+  playerStats: {fileID: 11400000, guid: ee0a83f2eaa88b84fb68678e87dcce6e, type: 2}
 --- !u!1 &1174958234
 GameObject:
   m_ObjectHideFlags: 0

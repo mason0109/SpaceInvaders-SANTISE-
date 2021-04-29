@@ -8,9 +8,11 @@ public class GameOverScript : MonoBehaviour
     [SerializeField]
     private Text scoreDisplay;
 
+    public PlayerStats playerStats;
+
     // Start is called before the first frame update
-    public void StartUp(int score)
+    public void Awake()
     {
-        scoreDisplay.text = "Score: " + score;
+        scoreDisplay.text = " " + playerStats.username + ": " + playerStats.Score;
     }
 }

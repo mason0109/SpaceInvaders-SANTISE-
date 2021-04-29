@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class RonaMovement : MonoBehaviour
 {
-    float timer = 0;
-    float timerMax = 0.5f;
+
     float speed = 0.005f;
 
     int ronaAmmoCount = 0;

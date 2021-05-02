@@ -27,10 +27,14 @@ public class UpdateLeaderboard : MonoBehaviour
     {
         if (PlayerStats.Score > Leaderboard.firstPlaceScore)
         {
+            Leaderboard.secondPlaceUsername = Leaderboard.firstPlaceUsername;
+            Leaderboard.secondPlaceScore = Leaderboard.firstPlaceScore;
             Leaderboard.firstPlaceUsername = PlayerStats.username;
             Leaderboard.firstPlaceScore = PlayerStats.Score;
         } else if (PlayerStats.Score < Leaderboard.firstPlaceScore && PlayerStats.Score > Leaderboard.secondPlaceScore)
         {
+            Leaderboard.thirdPlaceUsername = Leaderboard.secondPlaceUsername;
+            Leaderboard.thirdPlaceScore = Leaderboard.secondPlaceScore;
             Leaderboard.secondPlaceUsername = PlayerStats.username;
             Leaderboard.secondPlaceScore = PlayerStats.Score;
         } else if (PlayerStats.Score < Leaderboard.secondPlaceScore && PlayerStats.Score > Leaderboard.thirdPlaceScore)

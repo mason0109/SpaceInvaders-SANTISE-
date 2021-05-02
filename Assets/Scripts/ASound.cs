@@ -10,8 +10,8 @@ public class ASound
 
     public AudioClip Audio;
 
-    [Range(0f, 1f)]
-    public float Volume;
+    // [Range(0f, 1f)]
+    // public float Volume;
 
     public bool Repeat;
 

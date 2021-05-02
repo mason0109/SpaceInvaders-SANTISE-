@@ -13,6 +13,8 @@ public class AudioManager : MonoBehaviour
 
     public static AudioManager AManager;
 
+    public float volume = 1f;
+
     public ASound currentSound;
 
     public string soundToPlay;
@@ -34,7 +36,7 @@ public class AudioManager : MonoBehaviour
         {
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.Audio;
-            s.source.volume = s.Volume;
+            s.source.volume = volume;
         }
     }
 
@@ -45,6 +47,16 @@ public class AudioManager : MonoBehaviour
         EventSystem.current.onSceneChangeToHome += playNormalSoundtrack;
         checkScene();
         PlaySound(soundToPlay);
+    }
+
+    void Update()
+    {
+        currentSound.source.volume = volume;
+    }
+
+    public void updateVolume(float value)
+    {
+        volume = value;
     }
 
     public void PlaySound(string soundName)

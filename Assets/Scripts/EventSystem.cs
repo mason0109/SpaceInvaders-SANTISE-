@@ -73,4 +73,35 @@ public class EventSystem : MonoBehaviour
             onGameOver();
         }
     }
+
+    public event Action onSceneChangeToGame;
+
+    public void sceneChangeToGame()
+    {
+        if (onSceneChangeToGame != null)
+        {
+            onSceneChangeToGame();
+        }
+    }
+
+    public event Action onSceneChangeToGameOver;
+
+    public void sceneChangeToGameOver()
+    {
+        if (onSceneChangeToGameOver != null)
+        {
+            onSceneChangeToGameOver();
+        }
+    }
+
+    public event Action onSceneChangeToHome;
+
+    public void sceneChangeToHome()
+    {
+        if (onSceneChangeToHome != null)
+        {
+            onSceneChangeToHome();
+        }
+    }
+
 } 

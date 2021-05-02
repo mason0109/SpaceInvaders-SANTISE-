@@ -923,8 +923,8 @@ MonoBehaviour:
   lives2: {fileID: 13591447}
   lives3: {fileID: 63638234}
   player: {fileID: 6003642234305244014}
-  gameOverScript: {fileID: 0}
   playerStats: {fileID: 11400000, guid: ee0a83f2eaa88b84fb68678e87dcce6e, type: 2}
+  AudioManager: {fileID: 0}
   scoreDisplay: {fileID: 36593194}
 --- !u!4 &331528482
 Transform:
@@ -1403,8 +1403,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 708505564}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.08, y: -0.45, z: 0}
-  m_LocalScale: {x: 32.175, y: 18, z: 1}
+  m_LocalPosition: {x: -0.2188, y: -0.4168, z: 0}
+  m_LocalScale: {x: 37.153206, y: 17.933737, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -2284,7 +2284,7 @@ GameObject:
   - component: {fileID: 1349403369}
   - component: {fileID: 1349403368}
   m_Layer: 0
-  m_Name: EventSystem
+  m_Name: EventSystem(auto)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

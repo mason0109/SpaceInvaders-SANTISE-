@@ -45,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Vector3 v = rigidbody.transform.position + new Vector3(0, 0.8f, 0);
             sanitiserAmmoCopy = Instantiate(sanitiserAmmo, v, Quaternion.identity);
+            FindObjectOfType<AudioManager>().PlaySound("Shoot");
         }
 
     }
@@ -63,7 +64,6 @@ public class PlayerMovement : MonoBehaviour
         if (playerLives > 1) 
         {
             playerLives--;
-            //SEE IS UI CONTROLLER DOES THIS
         }
     }
 

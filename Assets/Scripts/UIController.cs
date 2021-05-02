@@ -59,12 +59,12 @@ public class UIController : MonoBehaviour
         {
             case 2:
                 lives3.transform.position = new Vector3(-5.15f, 6.41f, -50f);
-                //player.transform.position = new Vector3(-8.3f, -5.45f, -0.01f);
                 break;
             case 1:
                 lives3.transform.position = new Vector3(-5.15f, 6.41f, -50f);
                 lives2.transform.position = new Vector3(-6.44f, 6.41f, -50f);
-                //player.transform.position = new Vector3(-8.3f, -5.45f, -0.01f);
+                FindObjectOfType<AudioManager>().pauseCurrentSoundtrack();
+                FindObjectOfType<AudioManager>().PlaySound("LastLifeSound");
                 break;
             case 0:
                 lives1.transform.position = new Vector3(-7.73f, 6.41f, -50f);
@@ -83,6 +83,8 @@ public class UIController : MonoBehaviour
 
     void GameOver()
     {
+        FindObjectOfType<AudioManager>().pauseCurrentSoundtrack();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        EventSystem.current.sceneChangeToHome();
     }
 }

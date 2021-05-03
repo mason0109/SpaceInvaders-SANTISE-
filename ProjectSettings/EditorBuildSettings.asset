@@ -9,9 +9,27 @@ EditorBuildSettings:
     path: Assets/Scenes/HomeScreen.unity
     guid: 3b00fb0b6e5e8e1459f84f986c274ee8
   - enabled: 1
-    path: Assets/Scenes/GameScreen.unity
+    path: Assets/Scenes/LevelEasy1.unity
     guid: 50107ca28c9a36a489eb949b6c42aa78
+  - enabled: 1
+    path: Assets/Scenes/LevelEasy2.unity
+    guid: d670cbf434848444392cbaea33f64f06
+  - enabled: 1
+    path: Assets/Scenes/LevelMedium1.unity
+    guid: fb9622b626ae1cc4a988312a0cca9500
+  - enabled: 1
+    path: Assets/Scenes/LevelMedium2.unity
+    guid: 75822b67482e26c4abb9a39e01be34e0
+  - enabled: 1
+    path: Assets/Scenes/LevelHard1.unity
+    guid: 4c4f26b1f19439c4a9d77623481cfaf1
+  - enabled: 1
+    path: Assets/Scenes/LevelHard2.unity
+    guid: 6161c29fdc0cea441b60fcb4ea7913f6
   - enabled: 1
     path: Assets/Scenes/GameOverScene.unity
     guid: 4ea87fd4271dab9418c1f73f5baf0891
+  - enabled: 1
+    path: Assets/Scenes/LevelCompleteScene.unity
+    guid: a6f3f2b7ed17d754389dfac361411ab8
   m_configObjects: {}

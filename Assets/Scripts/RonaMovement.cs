@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class RonaMovement : MonoBehaviour
 {
-
     float speed = 0.005f;
 
     int ronaAmmoCount = 0;
@@ -14,9 +13,17 @@ public class RonaMovement : MonoBehaviour
 
     private Rigidbody2D rigidbody;
 
+    [SerializeField]
+    private PlayerStats playerStats;
+
     private void Awake()
     {
         rigidbody = gameObject.GetComponent<Rigidbody2D>();
+
+        if (playerStats.Difficulty == "Hard")
+        {
+            speed = 0.008f;
+        }
     }
 
     void Start()
@@ -59,7 +66,7 @@ public class RonaMovement : MonoBehaviour
 
     private void fireRonaAmmo()
     {
-        if (Random.Range(0f, 2000f) < 1)
+        if (Random.Range(0f, 1900f) < 1)
         {
             if (ronaAmmoCount < 3)
             {

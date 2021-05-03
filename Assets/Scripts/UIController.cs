@@ -23,6 +23,8 @@ public class UIController : MonoBehaviour
 
     public PlayerStats playerStats;
 
+    private int numberOfEnemies;
+
     [SerializeField]
     private Text scoreDisplay;
 
@@ -32,17 +34,22 @@ public class UIController : MonoBehaviour
         lives1.transform.position = new Vector3(-7.73f, 6.41f, 0f);
         lives2.transform.position = new Vector3(-6.44f, 6.41f, 0f);
         lives3.transform.position = new Vector3(-5.15f, 6.41f, 0f);
+        TimerController.instance.StartTimer();
         EventSystem.current.onFinalHitPlayerDies += playerDies;
         EventSystem.current.onEnemyKilledIncreaseScore += increaseScore;
         EventSystem.current.onGameOver += GameOver;
+        EventSystem.current.onEmeniesKilledLevelComplete += LevelComplete;
+        EventSystem.current.onEnemyKilled += enemyKilled;
     }
 
     // Update is called once per frame
     void Update()
     {
+        numberOfEnemies = GameObject.FindObjectsOfType(typeof(RonaMovement)).Length;
         if (playerDead == false){
             //check the player's health
             checkPlayerHealth();
+            checkNumberOfEnemies();
         }
     
     }
@@ -75,16 +82,40 @@ public class UIController : MonoBehaviour
         }
     }
 
+    void checkNumberOfEnemies()
+    {
+        if (numberOfEnemies == 0)
+        {
+            EventSystem.current.enemiesKilledLevelComplete();
+        }
+    }
+
     void increaseScore()
     {
         playerStats.Score = playerStats.Score + 50;
         scoreDisplay.text = "Score:  " + playerStats.Score;
     }
 
+    void enemyKilled()
+    {
+        numberOfEnemies--;
+    }
+
     void GameOver()
     {
+        TimerController.instance.StopTimer();
+        playerStats.totalTime = TimerController.instance.GetPlayerTime();
         FindObjectOfType<AudioManager>().pauseCurrentSoundtrack();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(7);
+        EventSystem.current.sceneChangeToHome();
+    }
+
+    void LevelComplete()
+    {
+        TimerController.instance.StopTimer();
+        playerStats.totalTime = TimerController.instance.GetPlayerTime();
+        FindObjectOfType<AudioManager>().pauseCurrentSoundtrack();
+        SceneManager.LoadScene(8);
         EventSystem.current.sceneChangeToHome();
     }
 }

@@ -104,4 +104,33 @@ public class EventSystem : MonoBehaviour
         }
     }
 
+    public event Action onReplayButtonClicked;
+
+    public void replayButtonClicked()
+    {
+        if (onReplayButtonClicked != null)
+        {
+            onReplayButtonClicked();
+        }
+    }
+
+    public event Action onEmeniesKilledLevelComplete;
+
+    public void enemiesKilledLevelComplete()
+    {
+        if (onEmeniesKilledLevelComplete != null)
+        {
+            onEmeniesKilledLevelComplete();
+        }
+    }
+
+    public event Action onEnemyKilled;
+
+    public void  enemyKilled()
+    {
+        if (onEnemyKilled != null)
+        {
+            onEnemyKilled();
+        }
+    }
 } 

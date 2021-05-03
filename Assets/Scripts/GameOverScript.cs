@@ -15,4 +15,9 @@ public class GameOverScript : MonoBehaviour
     {
         scoreDisplay.text = " " + playerStats.username + ": " + playerStats.Score;
     }
+
+    public void replayLevel()
+    {
+        EventSystem.current.replayButtonClicked();
+    }
 }

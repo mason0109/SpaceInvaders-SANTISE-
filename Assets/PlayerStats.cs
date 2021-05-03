@@ -9,9 +9,14 @@ public class PlayerStats : ScriptableObject
 
     public string username;
 
+    public string Difficulty;
+
+    public float totalTime;
+
     public void Restart()
     {
         Score = 0;
         username = "";
+        Difficulty = "Easy";
     }
 }

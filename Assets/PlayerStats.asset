@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: PlayerStats
   m_EditorClassIdentifier: 
   Score: 0
-  username: 
+  username: mason
+  Difficulty: Easy

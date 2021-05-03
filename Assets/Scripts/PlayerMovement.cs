@@ -5,8 +5,9 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float runSpeed;
-    //public GameObject player;
+    [SerializeField] 
+    private float runSpeed;
+    
     public GameObject sanitiserAmmo;
     public GameObject sanitiserAmmoCopy;
 
@@ -17,7 +18,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
-        //playerLives = 3;
         rigidbody = gameObject.GetComponent<Rigidbody2D>();
     } 
 

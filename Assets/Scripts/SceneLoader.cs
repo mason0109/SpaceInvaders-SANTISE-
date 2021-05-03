@@ -11,10 +11,24 @@ public class SceneLoader : MonoBehaviour
     [SerializeField]
     private float transitionTime = 1f;
 
+    [SerializeField]
+    private PlayerStats playerStats;
+
     public void StartGame()
     {
-        StartCoroutine(LoadTheScene(SceneManager.GetActiveScene().buildIndex + 1));
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        Debug.Log(playerStats.Difficulty);
+        if (playerStats.Difficulty == "Easy")
+        {
+            StartCoroutine(LoadTheScene(1));
+        }
+        if (playerStats.Difficulty == "Medium")
+        {
+            StartCoroutine(LoadTheScene(3));
+        }
+        if (playerStats.Difficulty == "Hard")
+        {
+            StartCoroutine(LoadTheScene(5));
+        }
         EventSystem.current.sceneChangeToGame();
     }
 
@@ -33,7 +47,12 @@ public class SceneLoader : MonoBehaviour
 
     public void TryAgain()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
+        StartCoroutine(LoadTheScene(0));
         EventSystem.current.sceneChangeToHome();
+    }
+
+    public void NextLevel()
+    {
+        StartCoroutine(LoadTheScene(SceneManager.GetActiveScene().buildIndex + 1));
     }
 }

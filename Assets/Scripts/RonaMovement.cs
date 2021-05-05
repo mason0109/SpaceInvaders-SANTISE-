@@ -70,7 +70,7 @@ public class RonaMovement : MonoBehaviour
         {
             if (Random.Range(0f, 1900f) < 1)
             {
-                if (ronaAmmoCount < 8)
+                if (ronaAmmoCount < 3)
                 {
                     Vector3 v = rigidbody.transform.position + new Vector3(0, -0.8f, 0);
                     ronaAmmoCopy = Instantiate(RonaAmmo, v, Quaternion.identity);
@@ -82,9 +82,9 @@ public class RonaMovement : MonoBehaviour
         }
         if (playerStats.Difficulty == "Medium")
         {
-            if (Random.Range(0f, 1900f) < 1)
+            if (Random.Range(0f, 2000f) < 1)
             {
-                if (ronaAmmoCount < 6)
+                if (ronaAmmoCount < 3)
                 {
                     Vector3 v = rigidbody.transform.position + new Vector3(0, -0.8f, 0);
                     ronaAmmoCopy = Instantiate(RonaAmmo, v, Quaternion.identity);
@@ -96,9 +96,9 @@ public class RonaMovement : MonoBehaviour
         }
         if (playerStats.Difficulty == "Easy")
         {
-            if (Random.Range(0f, 2000f) < 1)
+            if (Random.Range(0f, 3400f) < 1)
             {
-                if (ronaAmmoCount < 3)
+                if (ronaAmmoCount < 2)
                 {
                     Vector3 v = rigidbody.transform.position + new Vector3(0, -0.8f, 0);
                     ronaAmmoCopy = Instantiate(RonaAmmo, v, Quaternion.identity);

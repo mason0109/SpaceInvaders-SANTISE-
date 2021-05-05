@@ -55,12 +55,15 @@ public class SceneLoader : MonoBehaviour
                     {
                         case "Easy":
                                 StartCoroutine(LoadTheScene(1));
+                                EventSystem.current.sceneChangeToGame();
                                 break;
                         case "Medium":
                                 StartCoroutine(LoadTheScene(3));
+                                EventSystem.current.sceneChangeToGame();
                                 break;
                         case "Hard":
                                 StartCoroutine(LoadTheScene(5));
+                                EventSystem.current.sceneChangeToGame();
                                 break;
                     }
                     break;
@@ -69,12 +72,15 @@ public class SceneLoader : MonoBehaviour
                     {
                         case "Easy":
                                 StartCoroutine(LoadTheScene(2));
+                                EventSystem.current.sceneChangeToGame();
                                 break;
                         case "Medium":
                                 StartCoroutine(LoadTheScene(4));
+                                EventSystem.current.sceneChangeToGame();
                                 break;
                         case "Hard":
                                 StartCoroutine(LoadTheScene(6));
+                                EventSystem.current.sceneChangeToGame();
                                 break;
                     }
                     break;
@@ -114,11 +120,13 @@ public class SceneLoader : MonoBehaviour
 
     public void StartTutorial()
     {
+        EventSystem.current.sceneChangeToHome();
         StartCoroutine(LoadTheScene(9));
     }
 
     public void StartTutorialLevel()
     {
+        EventSystem.current.sceneChangeToGame();
         StartCoroutine(LoadTheScene(10));
     }
 
@@ -129,6 +137,7 @@ public class SceneLoader : MonoBehaviour
 
     public void creditsOverChangeScene()
     {
+        EventSystem.current.sceneChangeToHome();
         StartCoroutine(LoadTheScene(0));
     }
 }

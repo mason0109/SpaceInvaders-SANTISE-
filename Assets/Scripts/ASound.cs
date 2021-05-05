@@ -9,10 +9,7 @@ public class ASound
     public string Name;
 
     public AudioClip Audio;
-
-    // [Range(0f, 1f)]
-    // public float Volume;
-
+    
     public bool Repeat;
 
     [HideInInspector]

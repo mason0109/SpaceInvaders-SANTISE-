@@ -42,6 +42,7 @@ public class UIController : MonoBehaviour
         EventSystem.current.onGameOver += GameOver;
         EventSystem.current.onEmeniesKilledLevelComplete += LevelComplete;
         EventSystem.current.onEnemyKilled += enemyKilled;
+        checkScene();
         playerScript = player.GetComponent<PlayerMovement>();
     }
 
@@ -53,6 +54,14 @@ public class UIController : MonoBehaviour
             //check the player's health
             checkPlayerHealth();
             checkNumberOfEnemies();
+        }
+    }
+
+    void checkScene()
+    {
+        if (SceneManager.GetActiveScene().buildIndex == 10)
+        {
+            playerStats.Difficulty = "Easy";
         }
     }
 

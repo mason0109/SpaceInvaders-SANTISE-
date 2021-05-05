@@ -43,7 +43,6 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
         EventSystem.current.onSceneChangeToGame += playGameSoundtrack;
-        //EventSystem.current.onSceneChangeToGameOver += playNormalSoundtrack;
         EventSystem.current.onSceneChangeToHome += playNormalSoundtrack;
         checkScene();
         PlaySound(soundToPlay);

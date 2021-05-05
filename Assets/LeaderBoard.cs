@@ -10,21 +10,21 @@ public class LeaderBoard : ScriptableObject
         DontDestroyOnLoad(this);
     }
     
-    public string firstPlaceUsername = "";
+    public string firstPlaceUsername;
 
-    public int firstPlaceScore = 0;
+    public int firstPlaceScore;
 
-    public float firstPlaceTime = 0;
+    public float firstPlaceTime;
 
-    public string secondPlaceUsername = "";
+    public string secondPlaceUsername;
 
-    public int secondPlaceScore = 0;
+    public int secondPlaceScore;
 
-    public float secondPlaceTime = 0;
+    public float secondPlaceTime;
 
-    public string thirdPlaceUsername = "";
+    public string thirdPlaceUsername;
 
-    public int thirdPlaceScore = 0;
+    public int thirdPlaceScore;
 
-    public float thirdPlaceTime = 0;
+    public float thirdPlaceTime;
 }

@@ -19,6 +19,8 @@ public class UIController : MonoBehaviour
     [SerializeField]
     private GameObject player;
 
+    private PlayerMovement playerScript;
+
     private bool playerDead = false;
 
     public PlayerStats playerStats;
@@ -40,6 +42,7 @@ public class UIController : MonoBehaviour
         EventSystem.current.onGameOver += GameOver;
         EventSystem.current.onEmeniesKilledLevelComplete += LevelComplete;
         EventSystem.current.onEnemyKilled += enemyKilled;
+        playerScript = player.GetComponent<PlayerMovement>();
     }
 
     // Update is called once per frame
@@ -51,7 +54,6 @@ public class UIController : MonoBehaviour
             checkPlayerHealth();
             checkNumberOfEnemies();
         }
-    
     }
 
     void playerDies()
@@ -62,7 +64,7 @@ public class UIController : MonoBehaviour
 
     void checkPlayerHealth()
     {
-        switch(player.GetComponent<PlayerMovement>().playerLives)
+        switch(playerStats.playerLives)
         {
             case 2:
                 lives3.transform.position = new Vector3(-5.15f, 6.41f, -50f);
@@ -103,19 +105,38 @@ public class UIController : MonoBehaviour
 
     void GameOver()
     {
-        TimerController.instance.StopTimer();
-        playerStats.totalTime = TimerController.instance.GetPlayerTime();
-        FindObjectOfType<AudioManager>().pauseCurrentSoundtrack();
-        SceneManager.LoadScene(7);
-        EventSystem.current.sceneChangeToHome();
+        if (SceneManager.GetActiveScene().buildIndex == 10){
+            TimerController.instance.StopTimer();
+            FindObjectOfType<AudioManager>().pauseCurrentSoundtrack();
+            SceneManager.LoadScene(11);
+            EventSystem.current.sceneChangeToHome();
+        } else 
+        {
+            TimerController.instance.StopTimer();
+            playerStats.totalTime = TimerController.instance.GetPlayerTime();
+            FindObjectOfType<AudioManager>().pauseCurrentSoundtrack();
+            SceneManager.LoadScene(7);
+            playerScript.SavePlayer();
+            EventSystem.current.sceneChangeToHome();
+        }
     }
 
     void LevelComplete()
-    {
-        TimerController.instance.StopTimer();
-        playerStats.totalTime = TimerController.instance.GetPlayerTime();
-        FindObjectOfType<AudioManager>().pauseCurrentSoundtrack();
-        SceneManager.LoadScene(8);
-        EventSystem.current.sceneChangeToHome();
+    {   
+        if (SceneManager.GetActiveScene().buildIndex == 10){
+            TimerController.instance.StopTimer();
+            FindObjectOfType<AudioManager>().pauseCurrentSoundtrack();
+            SceneManager.LoadScene(12);
+            EventSystem.current.sceneChangeToHome();
+        } else 
+        {
+            TimerController.instance.StopTimer();
+            playerStats.totalTime = TimerController.instance.GetPlayerTime();
+            FindObjectOfType<AudioManager>().pauseCurrentSoundtrack();
+            SceneManager.LoadScene(8);
+            playerStats.level = playerStats.level + 1;
+            playerScript.SavePlayer();
+            EventSystem.current.sceneChangeToHome();
+        }
     }
 }

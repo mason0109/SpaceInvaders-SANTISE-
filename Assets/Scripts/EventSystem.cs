@@ -133,4 +133,34 @@ public class EventSystem : MonoBehaviour
             onEnemyKilled();
         }
     }
+
+    public event Action onBulletHitBoundary;
+
+    public void bulletHitBoundary()
+    {
+        if (onBulletHitBoundary != null)
+        {
+            onBulletHitBoundary();
+        }
+    }
+
+    public event Action onDefenceHit;
+
+    public void defenceHit()
+    {
+        if (onDefenceHit != null)
+        {
+            onDefenceHit();
+        }
+    }
+
+    public event Action onCreditsOver;
+
+    public void creditsOver()
+    {
+        if (onCreditsOver != null)
+        {
+            onCreditsOver();
+        }
+    }
 } 

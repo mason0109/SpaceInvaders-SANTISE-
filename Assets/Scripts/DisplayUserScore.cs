@@ -15,7 +15,7 @@ public class DisplayUserScore : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        displayText.text = playerStats.username + ": " + playerStats.Score;
+        displayText.text = playerStats.username + ": " + playerStats.Score + " Time: " + playerStats.totalTime;
     }
 
     // Update is called once per frame

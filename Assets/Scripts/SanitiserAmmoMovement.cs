@@ -9,7 +9,6 @@ public class SanitiserAmmoMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -26,13 +25,16 @@ public class SanitiserAmmoMovement : MonoBehaviour
             Destroy(gameObject);
             EventSystem.current.enemyKilled();
             EventSystem.current.enemyKilledIncreaseScore();
+            EventSystem.current.bulletHitBoundary();
         }
         if (collision.gameObject.tag == "Boundary")
         {
             Destroy(gameObject);
+            EventSystem.current.bulletHitBoundary();
         }
         if (collision.gameObject.tag == "Defence"){
             Destroy(gameObject);
+            EventSystem.current.bulletHitBoundary();
         }
     }
 }

@@ -7,6 +7,9 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] 
     private float runSpeed;
+
+    [SerializeField]
+    private PlayerStats playerStats;
     
     public GameObject sanitiserAmmo;
     public GameObject sanitiserAmmoCopy;
@@ -14,7 +17,8 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rigidbody;
     private Vector2 myVelocity;
 
-    public int playerLives = 3;
+    private int maxBullets = 3;
+    private int currentBullets = 0;
 
     private void Awake()
     {
@@ -24,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         EventSystem.current.onPlayerHitTakeALife += takeDamage;
+        EventSystem.current.onBulletHitBoundary += decreaseBulletCount;
     }
 
     public void Move(Vector2 direction)
@@ -41,8 +46,9 @@ public class PlayerMovement : MonoBehaviour
     
     public void Fire(float shoot)
     {
-        if (sanitiserAmmoCopy == null)
+        if (currentBullets < maxBullets)
         {
+            currentBullets++;
             Vector3 v = rigidbody.transform.position + new Vector3(0, 0.8f, 0);
             sanitiserAmmoCopy = Instantiate(sanitiserAmmo, v, Quaternion.identity);
             FindObjectOfType<AudioManager>().PlaySound("Shoot");
@@ -57,14 +63,24 @@ public class PlayerMovement : MonoBehaviour
 
     public void takeDamage()
     {
-        if (playerLives == 1) 
+        if (playerStats.playerLives == 1) 
         {
-            playerLives--;
+            playerStats.playerLives--;
         }
-        if (playerLives > 1) 
+        if (playerStats.playerLives > 1) 
         {
-            playerLives--;
+            playerStats.playerLives--;
         }
+    }
+
+    public void decreaseBulletCount()
+    {
+        currentBullets--;
+    }
+
+    public void SavePlayer()
+    {
+        SaveSystem.SavePlayer(playerStats);
     }
 
     void OnDestroy()

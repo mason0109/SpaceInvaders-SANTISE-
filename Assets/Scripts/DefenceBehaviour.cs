@@ -40,6 +40,7 @@ public class DefenceBehaviour : MonoBehaviour
         {
             onDamageDecrease();
             Destroy(collision.gameObject);
+            EventSystem.current.defenceHit();
         }
         if (collision.gameObject.tag == "Enemy")
         {

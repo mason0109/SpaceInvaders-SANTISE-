@@ -208,7 +208,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1481784480}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: StartGame
+        m_MethodName: NextLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -900,7 +900,7 @@ GameObject:
   - component: {fileID: 815734946}
   - component: {fileID: 815734945}
   - component: {fileID: 815734944}
-  - component: {fileID: 815734942}
+  - component: {fileID: 815734943}
   m_Layer: 0
   m_Name: Main Camera (1)
   m_TagString: MainCamera
@@ -908,7 +908,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &815734942
+--- !u!114 &815734943
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -917,10 +917,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 815734941}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d16e644020097b4f9fe321bb81484dc, type: 3}
+  m_Script: {fileID: 11500000, guid: 8b63dcc446f38984e99e6c914977f2fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStats: {fileID: 11400000, guid: ee0a83f2eaa88b84fb68678e87dcce6e, type: 2}
+  Leaderboard: {fileID: 11400000, guid: fd16589f89c216f4397207d88a9f6729, type: 2}
+  PlayerStats: {fileID: 11400000, guid: ee0a83f2eaa88b84fb68678e87dcce6e, type: 2}
 --- !u!81 &815734944
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1159,7 +1160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 908e37f4a88be6348ac6e456f2dc2f7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transition: {fileID: 0}
+  transition: {fileID: 1481784481}
   transitionTime: 1
   playerStats: {fileID: 11400000, guid: ee0a83f2eaa88b84fb68678e87dcce6e, type: 2}
 --- !u!4 &1240618978
@@ -1331,6 +1332,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 908e37f4a88be6348ac6e456f2dc2f7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1481784481 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 548691760126476099, guid: 1258a109542ae324ba3328c6dd548df8, type: 3}
+  m_PrefabInstance: {fileID: 1481784479}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1609602157
 GameObject:
   m_ObjectHideFlags: 0

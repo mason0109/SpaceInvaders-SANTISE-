@@ -13,7 +13,7 @@ public class GameOverScript : MonoBehaviour
     // Start is called before the first frame update
     public void Awake()
     {
-        scoreDisplay.text = " " + playerStats.username + ": " + playerStats.Score;
+        scoreDisplay.text = " " + playerStats.username + ": " + playerStats.Score + " Time: " + playerStats.totalTime;
     }
 
     public void replayLevel()

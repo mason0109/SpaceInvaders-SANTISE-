@@ -32,8 +32,9 @@ public class DisplayLeaderboard : MonoBehaviour
 
     void displayScores()
     {
-        firstplace.text = Leaderboard.firstPlaceUsername + ": " + Leaderboard.firstPlaceScore + " Time: " + Leaderboard.firstPlaceTime;
-        secondplace.text = Leaderboard.secondPlaceUsername + ": " + Leaderboard.secondPlaceScore + " Time: " + Leaderboard.secondPlaceTime;
-        thirdplace.text = Leaderboard.thirdPlaceUsername + ": " + Leaderboard.thirdPlaceScore + " Time: " + Leaderboard.thirdPlaceTime;
+        LeaderboardData leaderboard = SaveSystem.LoadLeaderboard();
+        firstplace.text = leaderboard.firstPlaceUsername + ": " + leaderboard.firstPlaceScore + " Time: " + leaderboard.firstPlaceTime;
+        secondplace.text = leaderboard.secondPlaceUsername + ": " + leaderboard.secondPlaceScore + " Time: " + leaderboard.secondPlaceTime;
+        thirdplace.text = leaderboard.thirdPlaceUsername + ": " + leaderboard.thirdPlaceScore + " Time: " + leaderboard.thirdPlaceTime;
     }
 }

@@ -66,15 +66,46 @@ public class RonaMovement : MonoBehaviour
 
     private void fireRonaAmmo()
     {
-        if (Random.Range(0f, 1900f) < 1)
+        if (playerStats.Difficulty == "Hard")
         {
-            if (ronaAmmoCount < 3)
+            if (Random.Range(0f, 1900f) < 1)
             {
-                Vector3 v = rigidbody.transform.position + new Vector3(0, -0.8f, 0);
-                ronaAmmoCopy = Instantiate(RonaAmmo, v, Quaternion.identity);
-                ronaAmmoCount++;
-            } else {
-                ronaAmmoCount = 0;
+                if (ronaAmmoCount < 8)
+                {
+                    Vector3 v = rigidbody.transform.position + new Vector3(0, -0.8f, 0);
+                    ronaAmmoCopy = Instantiate(RonaAmmo, v, Quaternion.identity);
+                    ronaAmmoCount++;
+                } else {
+                    ronaAmmoCount = 0;
+                }
+            }
+        }
+        if (playerStats.Difficulty == "Medium")
+        {
+            if (Random.Range(0f, 1900f) < 1)
+            {
+                if (ronaAmmoCount < 6)
+                {
+                    Vector3 v = rigidbody.transform.position + new Vector3(0, -0.8f, 0);
+                    ronaAmmoCopy = Instantiate(RonaAmmo, v, Quaternion.identity);
+                    ronaAmmoCount++;
+                } else {
+                    ronaAmmoCount = 0;
+                }
+            }
+        }
+        if (playerStats.Difficulty == "Easy")
+        {
+            if (Random.Range(0f, 2000f) < 1)
+            {
+                if (ronaAmmoCount < 3)
+                {
+                    Vector3 v = rigidbody.transform.position + new Vector3(0, -0.8f, 0);
+                    ronaAmmoCopy = Instantiate(RonaAmmo, v, Quaternion.identity);
+                    ronaAmmoCount++;
+                } else {
+                    ronaAmmoCount = 0;
+                }
             }
         }
     }
